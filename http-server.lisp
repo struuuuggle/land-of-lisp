@@ -108,13 +108,9 @@
       (let ((name (assoc 'name params)))
         (if (not name)
             (progn
-              (princ "HTTP/1.1 200 OK")
-              (terpri)
-              (terpri)
+              (format t "HTTP/1.1 200 OK~%~%")
               (princ "<html><form>What is your name?<input name='name' /></form></html>"))
           (progn
-            (princ "HTTP/1.1 200 OK")
-            (terpri)
-            (terpri)
+            (format t "HTTP/1.1 200 OK~%~%")
             (format t "<html>Nice to meet you, ~a!</html>" (cdr name)))))
     (princ "Sorry... I don't know that page.")))
